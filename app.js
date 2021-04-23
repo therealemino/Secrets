@@ -3,6 +3,7 @@ require('dotenv').config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
+const port = 3000;
 const mongoose = require("mongoose");
 const session = require('express-session');
 const passport = require("passport");
@@ -202,6 +203,6 @@ app.post("/login", function(req, res){
 
 
 
-app.listen(3000, function() {
-  console.log("Server started on port 3000.");
+app.listen(port, function() {
+  console.log(`Server running on port ${port}`);
 });
