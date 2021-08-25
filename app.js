@@ -72,18 +72,18 @@ passport.use(new GoogleStrategy({
   }
 ));
 
-passport.use(new FacebookStrategy({
-    clientID: process.env.FACEBOOK_APP_ID,
-    clientSecret: process.env.FACEBOOK_APP_SECRET,
-    callbackURL: "http://localhost:3000/auth/facebook/secrets"
-  },
-  function(accessToken, refreshToken, profile, cb) {
-    // console.log(profile);
-    User.findOrCreate({ facebookId: profile.id }, function (err, user) {
-      return cb(err, user);
-    });
-  }
-));
+// passport.use(new FacebookStrategy({
+//     clientID: process.env.FACEBOOK_APP_ID,
+//     clientSecret: process.env.FACEBOOK_APP_SECRET,
+//     callbackURL: "http://localhost:3000/auth/facebook/secrets"
+//   },
+//   function(accessToken, refreshToken, profile, cb) {
+//     // console.log(profile);
+//     User.findOrCreate({ facebookId: profile.id }, function (err, user) {
+//       return cb(err, user);
+//     });
+//   }
+// ));
 
 app.get("/", function(req, res){
   res.render("home");
